@@ -4,7 +4,7 @@
 - [Quickstart](#quickstart)
   - [Step 1 - Install and register the plugin](#step-1---install-and-register-the-plugin)
   - [Step 2 - Install required dependencies](#step-2---install-required-dependencies)
-  - [Step 3 - Configuration](#step-3---configuration)
+  - [Step 3 - Configuration (Vite)](#step-3---configuration-vite)
   - [Step 4 - Build](#step-4---build)
     - [When in "development"](#when-in-development)
     - [When in "production"](#when-in-production)
@@ -55,14 +55,14 @@ Make sure that you have the required peer dependencies installed:
   }
 ```
 
-### Step 3 - Configuration
+### Step 3 - Configuration (Vite)
 
 Checkout:
 
 * [vite.config.js](examples/basic/vite.config.js)
 * [index.html](examples/basic/index.html)
 
-This files need to be present in your project too.
+These files need to be present in your project too. And it's Vite configuration required for building our React application for both `development` and `production`.
 
 ### Step 4 - Build
 
