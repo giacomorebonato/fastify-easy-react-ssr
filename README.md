@@ -6,7 +6,7 @@
   - [Step 2 - Install required dependencies](#step-2---install-required-dependencies)
   - [Step 3 - Configuration (Vite)](#step-3---configuration-vite)
   - [Step 4 - Conventions](#step-4---conventions)
-  - [Step 4 - Build](#step-4---build)
+  - [Step 5 - Build for production](#step-5---build-for-production)
     - [When in "development"](#when-in-development)
     - [When in "production"](#when-in-production)
 - [Routing](#routing)
@@ -75,7 +75,7 @@ You need to have to files called:
 Look in the sample application how both these files use React Router to render all the pages for client and server.
 This plugin expects to find these 2 files in `/`, `/src` or `/lib`.
 
-### Step 4 - Build
+### Step 5 - Build for production
 
 I wish this was simpler...
 
