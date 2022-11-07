@@ -1,0 +1,21 @@
+
+{
+  "extends": "@tsconfig/node18-strictest-esm/tsconfig.json",
+  "compilerOptions": {    
+    "incremental": true,
+    "sourceMap": true,
+    "composite": true,
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "jsx": "react-jsxdev",
+    "allowJs": false,
+    "checkJs": false,
+    "module": "ESNext",
+    "esModuleInterop": true,
+    "preserveSymlinks": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "skipLibCheck": true
+  }
+}
