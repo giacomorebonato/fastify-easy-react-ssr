@@ -15,7 +15,8 @@ export const renderForProd = async (
     'utf-8'
   )
 
-  await server.register((await import('@fastify/compress')).default)
+  const { default: fastifyCompress } = await import('@fastify/compress')
+  await server.register(fastifyCompress)
   await server.register((await import('@fastify/static')).default, {
     root: path.join(APP_ROOT, 'dist/client/assets'),
     prefix: '/assets',
