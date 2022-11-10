@@ -75,6 +75,8 @@ You need to have to files called:
 Look in the sample application how both these files use React Router to render all the pages for client and server.
 This plugin expects to find these 2 files in `/`, `/src` or `/lib`.
 
+These files are very likely similar in a lot of projects... I wish we could find a way to abstract them.
+
 ### Step 5 - Build for production
 
 I wish this was simpler...
