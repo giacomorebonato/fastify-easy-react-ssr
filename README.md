@@ -15,12 +15,12 @@ This plugin makes it easy to create a performant fullstack application with serv
 
 ## Context
 
-It's still not easy enough to achieve SSR without committing to a full framework line Next or Remix.  
+It's still not easy enough to achieve SSR without committing to a full framework like [Next](https://nextjs.org) or [Remix](https://remix.run).  
 This plugin makes it easier by implementing the [SSR guide defined on Vite's documentation](https://vitejs.dev/guide/ssr.html) and enforcing convention over configuration as much as possible.
 
 ## Quickstart
 
-Jump to the [basic example](./examples/basic/src/index.js)
+Take a look at the [basic example](./examples/basic/src/index.js) for a minimal example.
 
 ### Step 1 - Install and register the plugin
 
@@ -44,7 +44,6 @@ Make sure that you have the required peer dependencies installed:
 ```js
   "dependencies": {
     "fastify": "^4.9.2",
-    "fastify-easy-react-ssr": "../../",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.3"
