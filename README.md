@@ -90,9 +90,12 @@ I wish this was simpler...
 `npm run build` needs to be executed before `NODE_ENV=production npm start`:
 
 ```json
-"build": "npm run build:client && npm run build:server",
-"build:client": "vite build --outDir dist/client",
-"build:server": "vite build --ssr src/entry-server.jsx --outDir dist/server",
+// package.json
+{
+  "build": "npm run build:client && npm run build:server",
+  "build:client": "vite build --outDir dist/client",
+  "build:server": "vite build --ssr src/entry-server.jsx --outDir dist/server",
+}
 ```
 
 While this added step is a bit annoying, it ensures that you are not shipping and running Vite in Production.

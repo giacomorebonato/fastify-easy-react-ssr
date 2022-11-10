@@ -1,7 +1,6 @@
 import type { FastifyInstance } from 'fastify'
 import fs from 'fs'
 import path from 'path'
-import 'react'
 import type { ReactSSROptions } from './@types/react-ssr-options'
 
 const APP_ROOT = process.cwd()
@@ -17,13 +16,15 @@ export const renderForProd = async (
 
   const { default: fastifyCompress } = await import('@fastify/compress')
   await server.register(fastifyCompress)
-  await server.register((await import('@fastify/static')).default, {
+
+  const { default: fastifyStatic } = await import('@fastify/static')
+  await server.register(fastifyStatic, {
     root: path.join(APP_ROOT, 'dist/client/assets'),
     prefix: '/assets',
   })
 
   server.get('*', async (req, reply) => {
-    const render = (await import(options.entryServerPath)).render
+    const { render } = await import(options.entryServerPath)
     const appHtml = render(req.url)
 
     if (appHtml === '') {
