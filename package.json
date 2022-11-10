@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "npm run clean && tsc",
-    "clean": "del dist",
+    "clean": "del dist && del tsconfig.tsbuildinfo",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "release": "release-it"
   },
