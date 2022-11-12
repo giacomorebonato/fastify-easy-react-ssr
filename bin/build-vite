@@ -1,0 +1,33 @@
+#!/bin/sh
+':' // ; cat "$0" | node --input-type=module - $@ ; exit $?
+
+import { exec } from 'child_process'
+
+const print = ({ stdout, stderr }) => {
+  if (stdout) {
+    console.log(stdout)
+  }
+
+  if (stderr) {
+    console.error(stderr)
+  }
+}
+
+exec(`npx vite build --outDir dist/client`, (error, stdout, stderr) => {
+  if (error) {
+    throw error
+  }
+
+  print({ stdout, stderr })
+
+  exec(
+    `npx vite build --ssr src/entry-server.jsx --outDir dist/server`,
+    (error, stdout, stderr) => {
+      if (error) {
+        throw error
+      }
+
+      print({ stdout, stderr })
+    }
+  )
+})

@@ -1,9 +1,9 @@
 import type { FastifyInstance } from 'fastify'
 import fastifyPlugin from 'fastify-plugin'
-import Fs from 'fs'
 import Path from 'path'
 import type { ReactSSROptions } from './@types/react-ssr-options.js'
-import { entryServerDevPaths, entryServerProdPaths } from './paths.js'
+import { getEntryServerPath } from './get-entry-server-path.js'
+
 import { renderForDev } from './render-for-dev.js'
 import { renderForProd } from './render-for-prod.js'
 
@@ -14,19 +14,6 @@ const defaultOptions = {
   notFoundRoute: '/not-found',
   assetsPath: Path.join(APP_ROOT, 'dist', 'client', 'assets'),
   ssrOutlet: '<!--ssr-outlet-->',
-}
-
-const getEntryServerPath = () => {
-  const filePaths =
-    NODE_ENV === 'production' ? entryServerProdPaths : entryServerDevPaths
-
-  for (let filePath of filePaths) {
-    if (Fs.existsSync(filePath)) {
-      return filePath
-    }
-  }
-
-  throw Error(`Couldn't find entry-server file in \n${filePaths.join('\n')}`)
 }
 
 export const fastifyEasyReactSSR = fastifyPlugin<Partial<ReactSSROptions>>(

@@ -20,6 +20,6 @@
     "strict": true,
     "skipLibCheck": true
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "bin/build-vite"],
   "exclude": ["jest.config.ts", "**/__tests__/*"]
 }
