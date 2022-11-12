@@ -1,7 +1,6 @@
 import type { JestConfigWithTsJest } from 'ts-jest'
 
 const jestConfig: JestConfigWithTsJest = {
-  collectCoverage: true,
   extensionsToTreatAsEsm: ['.ts', '.tsx'],
   preset: 'ts-jest/presets/default-esm',
   testEnvironment: 'node',

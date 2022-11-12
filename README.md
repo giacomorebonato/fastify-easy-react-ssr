@@ -91,9 +91,12 @@ I wish this was simpler...
 ```json
 // package.json
 {
+  // all the needed commands
   "build": "npm run build:client && npm run build:server",
   "build:client": "vite build --outDir dist/client",
   "build:server": "vite build --ssr src/entry-server.jsx --outDir dist/server",
+  // or experimemtal
+  "build": "build-vite" // which is the same as above
 }
 ```
 

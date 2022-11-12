@@ -3,3 +3,6 @@ node_modules
 tsconfig.tsbuildinfo
 .nyc_output
 coverage
+/test-results/
+/playwright-report/
+/playwright/.cache/

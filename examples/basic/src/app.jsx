@@ -1,4 +1,4 @@
-import { Route, Routes, Link } from 'react-router-dom'
+import { Route, Routes, Link, Navigate } from 'react-router-dom'
 
 const NavLinks = () => (
   <nav className='w-full grid grid-flow-row grid-cols-3 text-center'>
@@ -24,7 +24,7 @@ export const Pages = () => {
 			<Route path='/' element={<Home />} />
 			<Route path='/about' element={<About />} />
 			<Route path='/not-found' element={<NotFound />} />
-      <Route path='*' element={<NotFound />} />
+      <Route path='*' element={<Navigate to='/not-found' />} />
 		</Routes>
 	)
 }
