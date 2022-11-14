@@ -21,9 +21,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm i
+      - run: npm install
+      - run: npm install
+        working-directory: examples/basic
       - run: npm test
-      - run: cd ./examples/basic && npm i
-      - run: pwd
       - run: npm run e2e:dev
       - run: npm run e2e:prod
