@@ -24,5 +24,6 @@ jobs:
       - run: npm i
       - run: npm test
       - run: cd ./examples/basic && npm i
-      - run: cd ../../
-      - run: npm run e2e
+      - run: pwd
+      - run: npm run e2e:dev
+      - run: npm run e2e:prod
