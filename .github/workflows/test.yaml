@@ -23,8 +23,11 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
       - run: npm ci
-      - run: npm install
+      - name: Install dependencies for examples/basic
+        run: npm install
         working-directory: examples/basic
+      - name: Install playwright browsers
+        run: npx playwright install-deps chromium
       - run: npm test
       - run: npm run e2e:dev
       - run: npm run e2e:prod
