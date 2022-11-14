@@ -1,6 +1,5 @@
 import type { FastifyInstance } from 'fastify'
 import fastifyPlugin from 'fastify-plugin'
-import Path from 'path'
 import type { ReactSSROptions } from './@types/react-ssr-options.js'
 import { getEntryServerPath } from './get-entry-server-path.js'
 
@@ -8,11 +7,9 @@ import { renderForDev } from './render-for-dev.js'
 import { renderForProd } from './render-for-prod.js'
 
 const NODE_ENV = process.env['NODE_ENV']
-const APP_ROOT = process.cwd()
 
 const defaultOptions = {
   notFoundRoute: '/not-found',
-  assetsPath: Path.join(APP_ROOT, 'dist', 'client', 'assets'),
   ssrOutlet: '<!--ssr-outlet-->',
 }
 

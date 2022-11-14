@@ -13,5 +13,7 @@ export const getEntryServerPath = () => {
     }
   }
 
-  throw Error(`Couldn't find entry-server file in \n${filePaths.join('\n')}`)
+  throw Error(
+    `Couldn't find entry-server file in any of\n${filePaths.join('\n')}`
+  )
 }
